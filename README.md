@@ -23,8 +23,28 @@
   	  // a set of assertions go here
   	});
   	```
-  4. Expectation `expect`
+  4. Expectation
+  - An expectation is built with the function expect, which takes a value called actual, it chains with a
+  Matcher function, which takes the expected value.
+  - **Syntax**:
+  ```
+  var actual = foo.bar(),
+      expected = true;
+  expect(actual).toEqual(expected);
+  ```
   5. Matcher
+    - Boolean comparison between the actual value and the expected value.
+    	- Responsible for reporting to Jasmine if the expectation is true or false.
+    	- Jasmine will pass or fail the spec.
+    	- You can also create custom matchers, when project’s domain calls for specific assertions
+    	- **Some matchers**:
+    	.toEqual()
+    	.toBe()
+    	.toBeTruthy()
+    	.toBeFalsy()
   6. Grouping Related Specs
-  7. Setup & Teardown with `beforeEach` & `afterEach`
-
+    	- You can group related specs, with a describe block. This is useful for readability, and if you name them well,
+    	your specs read like sentences, used in BDD style.
+  7. Setup & Teardown
+    - To setup your tests, use the Jasmine global function `beforeEach`
+    - To tear down, or cleanup after you've performed your tests, use the Jasmine global function `afterEach`
