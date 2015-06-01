@@ -3,9 +3,9 @@
 ## Jasmine Primer
 
   1. About Jasmine
-    1.1 BDD framework
-    1.2 Doesn't have any dependencies
-    1.3 Doesn't require a DOM to run
+    - BDD framework
+    - Doesn't have any dependencies
+    - Doesn't require a DOM to run
   2. Test Suites `describe`
     2.1 Describe what you're testing (A Calculator, An Angular Controller, etc..)
     2.2 Contains a set of specs
