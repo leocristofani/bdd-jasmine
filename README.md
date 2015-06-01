@@ -9,8 +9,20 @@
   2. Test Suites
     - Describe what you're testing (A Calculator, An Angular Controller, etc..)
     - Contains a set of specs
-    - **Syntax**: `describe('Description',function() {})`
-  3. Test Specs `it`
+    - **Syntax**:
+    ```
+    describe('Description',function() {
+      // a set of specs go here
+    });
+    ```
+  3. Test Specs
+    - Test a unit of functionality of what you’re testing. Usually a function, an interface.
+  	- **Syntax**:
+  	```
+  	it('should sum 2 numbers', function() {
+  	  // a set of assertions go here
+  	});
+  	```
   4. Expectation `expect`
   5. Matcher
   6. Grouping Related Specs
