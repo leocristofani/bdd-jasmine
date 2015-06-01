@@ -11,7 +11,7 @@
     - Contains a set of specs
     - **Syntax**:
     ```
-    describe('Description',function() {
+    describe('My Object',function() {
       // a set of specs go here
     });
     ```
@@ -19,7 +19,7 @@
     - Test a unit of functionality of what you’re testing. Usually a function, an interface.
   	- **Syntax**:
   	```
-  	it('should sum 2 numbers', function() {
+  	it('should do something useful', function() {
   	  // a set of assertions go here
   	});
   	```
