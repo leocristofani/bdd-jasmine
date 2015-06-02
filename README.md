@@ -1,10 +1,11 @@
 # Testing Javascript with Jasmine (BDD)
 
-***PS.** This document is based on the [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html), and it's purpose is to highlight the most used features of the framework.*
+*PS. This document is based on the [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html), and its purpose is to highlight the most used features of the framework. It also gives an overflow on how to test Angular controllers, directives and services.*
 
 ## Table of content
 
 #### Jasmine Primer
+
 1. Overflow
 2. Test Suites
 3. Test Specs
@@ -12,6 +13,16 @@
 5. Matchers
 6. Grouping Related Specs
 7. Setup & Teardown 
+
+#### Testing Angular
+	
+1. Setup (Jasmine, Karma & Grunt)
+2. How to run unit tests from the terminal
+3. Testing controllers
+4. Testing directives with an internal template
+5. Testing directives with an external template
+6. Testing services and factories
+
 
 ## Jasmine Primer
 
