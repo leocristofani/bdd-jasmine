@@ -39,69 +39,98 @@
 
 	**Syntax**:
     
-	```
-	describe('My Object',function() {
+```
+describe('My Object',function() {
 	
-		// a set of specs go here
+	// a set of specs go here
 		
-	});
-	```
+});
+```
     	
 ### Test Specs
 - Test a unit of functionality of what you’re testing. Usually a **function**, an **interface**.
 
 - **Syntax**:  	
 
-	```
-	it('should do something useful', function() {
+```
+it('should do something useful', function() {
 	
-		// a set of assertions go here
+	// a set of assertions go here
 
-	});
-	```
+});
+```
   	
 ### Expectation
 - An expectation is built with the function expect, which takes a value called actual, it chains with a matcher function, which takes the expected value.
+- You can add more than one expectation to a spec
 - **Syntax**:
     
-	```
-	// the actual value you're testing.
-	var actual = foo.bar();
+```
+// the actual value you're testing.
+var actual = foo.bar();
 	
-	// what you expect the actual value to be/match.
-	var expected = true;
+// what you expect the actual value to be/match.
+var expected = true;
 	
-	expect(actual).toEqual(expected);
-	```
+expect(actual).toEqual(expected);
+expect(foo.bar('param')).toBeFalsy();
+```
     
 ### Matcher
 - Boolean comparison between the actual value and the expected value.
 - Responsible for reporting to Jasmine if the expectation is true or false.
 - Jasmine will pass or fail the spec.
-- You can also create custom matchers, when project’s domain calls for specific assertions
 
-- **Some matchers**:
+- **Most used matchers**:
   	
-	``` 
-	
-	var actual = 'some value';
-	var expected = 'expected value';
+```
+var actual = 'some value';
+var expected = 'expected value';
 
-	// checks equivalence (when checking string, numbers, primitive values in general)
-	expect(actual).toEqual(expected);
+// checks equivalence (usually when checking primitives)
+expect(actual).toEqual(expected);
 	
-	// check if it's the exact same object
-	expect(actual).toBe(expected);
+// check if it's the exact same object
+expect(actual).toBe(expected);
 
-	// boolean checks
-	expect.toBeTruthy(expected);    
-	expect(actual).toBeFalsy(expected);
-	```
+// boolean checks
+expect.toBeTruthy(expected);    
+expect(actual).toBeFalsy(expected);
+```
     
 - Stack Overflow: [The difference between toEqual and toBe](http://stackoverflow.com/questions/22413009/javascript-using-methods-to-compare)
+- **Special matchers**:
+
+```
+// jasmine.any() - returns true if the constructor matches the constructor of the actual value
+expect({}).toEqual(jasmine.any(Object));
+expect(12).toEqual(jasmine.any(Number));
+
+// jasmine.anything() - returns true of the actual is not null nor undefined
+expect(1).toEqual(jasmine.anything());
+
+```
+
+- You can find many more useful special matchers like `jasmine.objectContaining()`, `jasmine.arrayContaining` and `jasmine.stringMatching` in the [Jasmine documentation](http://jasmine.github.io/2.3/introduction.html#section-Matching_Anything_with_<code>jasmine.any</code>).
+- If your project requires **custom matchers**, you're all set with Jasmine. [Check out the documentation](http://jasmine.github.io/2.3/custom_matcher.html).
+
 
 ### Grouping Related Specs
 - You can group related specs, with a describe block. This is useful for readability, and if you name them well, your specs read like sentences, used in BDD style.
+
+```
+describe(function('A Calculator', function() {
+
+	describe('when adding', function() {
+		it('should add two numbers');
+		it('should add three numbers');
+	});
+	
+	it('should subtract 2 numbers');
+	
+});		
+```
+
 
 ### Setup & Teardown
 
