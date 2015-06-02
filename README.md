@@ -23,6 +23,9 @@
 5. Testing directives with an external template
 6. Testing services and factories
 
+#### Further Resources
+
+
 
 ## Jasmine Primer
 
@@ -97,8 +100,7 @@ expect(actual).toBe(expected);
 expect.toBeTruthy(expected);    
 expect(actual).toBeFalsy(expected);
 ```
-    
-- Stack Overflow: [The difference between toEqual and toBe](http://stackoverflow.com/questions/22413009/javascript-using-methods-to-compare)
+
 - **Special matchers**:
 
 ```
@@ -136,5 +138,11 @@ describe(function('A Calculator', function() {
 
 - To setup your tests, use the Jasmine global function `beforeEach`
 - To tear down, or cleanup after you've performed your tests, use the Jasmine global function `afterEach`
+
+### Further Resources
+- [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html)
+- [The difference between toEqual and toBe](http://stackoverflow.com/questions/22413009/javascript-using-methods-to-compare) *(Stack Overflow)*
+
+
 
 
