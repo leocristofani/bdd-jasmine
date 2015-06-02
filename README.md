@@ -1,6 +1,6 @@
 # Testing Javascript with Jasmine (BDD)
 
-*PS. This document is based on the [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html), and its purpose is to highlight the most used features of the framework. It also gives an overflow on how to test Angular controllers, directives and services.*
+*Note. This document is based on the [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html), and its purpose is to highlight the most used features of the framework. It also gives an overflow on how to test Angular controllers, directives and services.*
 
 ## Table of content
 
@@ -97,8 +97,8 @@ expect(actual).toEqual(expected);
 expect(actual).toBe(expected);
 
 // boolean checks
-expect.toBeTruthy(expected);    
-expect(actual).toBeFalsy(expected);
+expect(actual).toBeTruthy();    
+expect(actual).toBeFalsy();
 ```
 
 - **Special matchers**:
