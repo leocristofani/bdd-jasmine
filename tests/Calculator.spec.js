@@ -2,29 +2,17 @@ describe('A Calculator', function () {
 
 	var calculator;
 
-	/**
-	 * Setup
-	 */
 	beforeEach(function () {
 		calculator = new Calculator(true);
-		console.log('-- before');
 	});
 
-	/**
-	 * Tear down
-	 */
 	afterEach(function() {
-		console.log('after --');
+		console.log('afterEach');
 	});
 
-	/**
-	 * You can group related functionality
-	 */
 	describe('when adding', function () {
 
 		it('should add two numbers', function () {
-
-			console.log('during');
 
 			var actual   = calculator.add(2, 2),
 			    expected = 4;
@@ -51,7 +39,7 @@ describe('A Calculator', function () {
 
 	});
 
-	xit('should be fast', function() {
+	it('should be fast', function() {
 
 		var actual = calculator.isNew(),
 		    expected = true;
