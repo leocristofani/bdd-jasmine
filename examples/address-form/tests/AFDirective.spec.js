@@ -13,7 +13,7 @@
 			mockZipCode = '02011200';
 
 			var mockHtml = [
-				'<form af-directive>',
+				'<form af-directive data-zipcode-field="cep">',
 					'<input type="text" name="cep" ng-model="address.cep" id="cep"/>',
 					'<input type="text" name="uf" id="uf" ng-model="address.uf" disabled="disabled"/>',
 					'<button class="btn btn-success" disabled="disabled">Submit</button>',

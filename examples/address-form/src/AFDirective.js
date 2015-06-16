@@ -5,11 +5,15 @@
 	function AFDirective() {
 
 		return {
-			link: function(scope, element, attr) {
+			link: function(scope, element, attrs) {
+
+				var zipCodeField = attrs['zipcodeField'];
+
+				console.log(zipCodeField);
 
 				var $el = $(element);
 
-				$el.find('#cep').on('blur', function() {
+				$el.find('[name='+ zipCodeField +']').on('blur', function() {
 
 					var zipCode = $(this).val();
 					scope.updateAddress(zipCode);
