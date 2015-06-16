@@ -493,14 +493,14 @@ getJasmineRequireObj().Env = function(j$) {
 
     this.addCustomEqualityTester = function(tester) {
       if(!currentRunnable()) {
-        throw new Error('Custom Equalities must be added in a before function or a spec');
+        throw new Error('Custom Equalities must be added in a before function or a unit');
       }
       runnableResources[currentRunnable().id].customEqualityTesters.push(tester);
     };
 
     this.addMatchers = function(matchersToAdd) {
       if(!currentRunnable()) {
-        throw new Error('Matchers must be added in a before function or a spec');
+        throw new Error('Matchers must be added in a before function or a unit');
       }
       var customMatchers = runnableResources[currentRunnable().id].customMatchers;
       for (var matcherName in matchersToAdd) {
@@ -512,7 +512,7 @@ getJasmineRequireObj().Env = function(j$) {
 
     var nextSpecId = 0;
     var getNextSpecId = function() {
-      return 'spec' + nextSpecId++;
+      return 'unit' + nextSpecId++;
     };
 
     var nextSuiteId = 0;
@@ -684,7 +684,7 @@ getJasmineRequireObj().Env = function(j$) {
 
     var spyRegistry = new j$.SpyRegistry({currentSpies: function() {
       if(!currentRunnable()) {
-        throw new Error('Spies must be created in a before function or a spec');
+        throw new Error('Spies must be created in a before function or a unit');
       }
       return runnableResources[currentRunnable().id].spies;
     }});
@@ -842,7 +842,7 @@ getJasmineRequireObj().Env = function(j$) {
 
     this.expect = function(actual) {
       if (!currentRunnable()) {
-        throw new Error('\'expect\' was used when there was no current spec, this could be because an asynchronous test timed out');
+        throw new Error('\'expect\' was used when there was no current unit, this could be because an asynchronous test timed out');
       }
 
       return currentRunnable().expect(actual);

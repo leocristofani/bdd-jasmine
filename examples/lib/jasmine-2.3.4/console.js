@@ -77,11 +77,11 @@ getJasmineRequireObj().ConsoleReporter = function() {
       if(specCount > 0) {
         printNewline();
 
-        var specCounts = specCount + ' ' + plural('spec', specCount) + ', ' +
+        var specCounts = specCount + ' ' + plural('unit', specCount) + ', ' +
           failureCount + ' ' + plural('failure', failureCount);
 
         if (pendingCount) {
-          specCounts += ', ' + pendingCount + ' pending ' + plural('spec', pendingCount);
+          specCounts += ', ' + pendingCount + ' pending ' + plural('unit', pendingCount);
         }
 
         print(specCounts);

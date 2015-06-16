@@ -57,7 +57,7 @@
 
   /**
    * ## Reporters
-   * The `HtmlReporter` builds all of the HTML UI for the runner page. This reporter paints the dots, stars, and x's for specs, as well as all spec names and all failures (if any).
+   * The `HtmlReporter` builds all of the HTML UI for the runner page. This reporter paints the dots, stars, and x's for specs, as well as all unit names and all failures (if any).
    */
   var htmlReporter = new jasmine.HtmlReporter({
     env: env,
@@ -71,16 +71,16 @@
   });
 
   /**
-   * The `jsApiReporter` also receives spec results, and is used by any environment that needs to extract the results  from JavaScript.
+   * The `jsApiReporter` also receives unit results, and is used by any environment that needs to extract the results  from JavaScript.
    */
   env.addReporter(jasmineInterface.jsApiReporter);
   env.addReporter(htmlReporter);
 
   /**
-   * Filter which specs will be run by matching the start of the full name against the `spec` query param.
+   * Filter which specs will be run by matching the start of the full name against the `unit` query param.
    */
   var specFilter = new jasmine.HtmlSpecFilter({
-    filterString: function() { return queryString.getParam("spec"); }
+    filterString: function() { return queryString.getParam("unit"); }
   });
 
   env.specFilter = function(spec) {

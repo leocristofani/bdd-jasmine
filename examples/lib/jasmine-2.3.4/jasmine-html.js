@@ -98,7 +98,7 @@ jasmineRequire.HtmlReporter = function(j$) {
     };
 
     this.specStarted = function(result) {
-      currentParent.addChild(result, 'spec');
+      currentParent.addChild(result, 'unit');
     };
 
     var failures = [];
@@ -122,7 +122,7 @@ jasmineRequire.HtmlReporter = function(j$) {
         failureCount++;
 
         var failure =
-          createDom('div', {className: 'spec-detail failed'},
+          createDom('div', {className: 'unit-detail failed'},
             createDom('div', {className: 'description'},
               createDom('a', {title: result.fullName, href: specHref(result)}, result.fullName)
             ),
@@ -166,7 +166,7 @@ jasmineRequire.HtmlReporter = function(j$) {
                 id: 'throw-failures',
                 type: 'checkbox'
               }),
-              createDom('label', { className: 'label', 'for': 'throw-failures' }, 'stop spec on expectation failure'))
+              createDom('label', { className: 'label', 'for': 'throw-failures' }, 'stop unit on expectation failure'))
           )
         ));
 
@@ -204,8 +204,8 @@ jasmineRequire.HtmlReporter = function(j$) {
       var statusBarClassName = 'bar ';
 
       if (totalSpecsDefined > 0) {
-        statusBarMessage += pluralize('spec', specsExecuted) + ', ' + pluralize('failure', failureCount);
-        if (pendingSpecCount) { statusBarMessage += ', ' + pluralize('pending spec', pendingSpecCount); }
+        statusBarMessage += pluralize('unit', specsExecuted) + ', ' + pluralize('failure', failureCount);
+        if (pendingSpecCount) { statusBarMessage += ', ' + pluralize('pending unit', pendingSpecCount); }
         statusBarClassName += (failureCount > 0) ? 'failed' : 'passed';
       } else {
         statusBarClassName += 'skipped';
@@ -242,7 +242,7 @@ jasmineRequire.HtmlReporter = function(j$) {
             summaryList(resultNode, suiteListNode);
             domParent.appendChild(suiteListNode);
           }
-          if (resultNode.type == 'spec') {
+          if (resultNode.type == 'unit') {
             if (domParent.getAttribute('class') != 'specs') {
               specListNode = createDom('ul', {className: 'specs'});
               domParent.appendChild(specListNode);
@@ -257,7 +257,7 @@ jasmineRequire.HtmlReporter = function(j$) {
             specListNode.appendChild(
               createDom('li', {
                   className: resultNode.result.status,
-                  id: 'spec-' + resultNode.result.id
+                  id: 'unit-' + resultNode.result.id
                 },
                 createDom('a', {href: specHref(resultNode.result)}, specDescription)
               )
@@ -268,19 +268,19 @@ jasmineRequire.HtmlReporter = function(j$) {
 
       if (failures.length) {
         alert.appendChild(
-          createDom('span', {className: 'menu bar spec-list'},
+          createDom('span', {className: 'menu bar unit-list'},
             createDom('span', {}, 'Spec List | '),
             createDom('a', {className: 'failures-menu', href: '#'}, 'Failures')));
         alert.appendChild(
           createDom('span', {className: 'menu bar failure-list'},
-            createDom('a', {className: 'spec-list-menu', href: '#'}, 'Spec List'),
+            createDom('a', {className: 'unit-list-menu', href: '#'}, 'Spec List'),
             createDom('span', {}, ' | Failures ')));
 
         find('.failures-menu').onclick = function() {
           setMenuModeTo('failure-list');
         };
-        find('.spec-list-menu').onclick = function() {
-          setMenuModeTo('spec-list');
+        find('.unit-list-menu').onclick = function() {
+          setMenuModeTo('unit-list');
         };
 
         setMenuModeTo('failure-list');
@@ -340,7 +340,7 @@ jasmineRequire.HtmlReporter = function(j$) {
     }
 
     function specHref(result) {
-      return addToExistingQueryString('spec', result.fullName);
+      return addToExistingQueryString('unit', result.fullName);
     }
 
     function defaultQueryString(key, value) {
