@@ -7,11 +7,6 @@ describe('Calculator', function() {
 
 	beforeEach(function() {
 		calculator = new Calculator();
-		console.log('beforeEach');
-	});
-
-	afterEach(function() {
-		console.log('afterEach');
 	});
 
 	describe('when adding', function() {

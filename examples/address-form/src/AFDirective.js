@@ -9,8 +9,6 @@
 
 				var zipCodeField = attrs['zipcodeField'];
 
-				console.log(zipCodeField);
-
 				var $el = $(element);
 
 				$el.find('[name='+ zipCodeField +']').on('blur', function() {
