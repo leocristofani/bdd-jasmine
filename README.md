@@ -139,8 +139,9 @@ describe(function('A Calculator', function() {
 
 ## Testing Angular
 
-Refer to `examples/address-form/`. You can understand how to test angular controllers, services and directives by
-reading the comments in the spec files.
+Refer to [example unit tested application](https://github
+.com/leocristofani/bdd-jasmine/tree/master/examples/address-form). Hopefully you'll understand how to test angular
+controllers, services and directives from reading the comments in the spec files.
 
 
 ## Further Resources
