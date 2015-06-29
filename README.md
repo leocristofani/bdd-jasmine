@@ -1,12 +1,14 @@
 # Testing Javascript with Jasmine (BDD)
 
-*Note. This document is based on the [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html), and its purpose is to highlight the most used features of the framework. It also gives an overflow on how to test Angular controllers, directives and services.*
+*Note. This document is based on the [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html)
+, and its purpose is to highlight the most used features of the framework. It also gives an overview of how to test
+Angular controllers, directives and services.*
 
 ## Table of content
 
 #### Jasmine Primer
 
-1. Overflow
+1. Overview
 2. Test Suites
 3. Test Specs
 4. Expectations
@@ -16,19 +18,18 @@
 
 #### Testing Angular
 
-1. Testing Angular controllers
-2. Testing Angular services
-4. Testing Angular directives
+1. Example unit tested application
 
 #### Further Resources
 
+1. Links to further resources
 
 ## Jasmine Primer
 
 ### Overview
   
 - BDD framework for testing Javascript code
-- Doesn't have any dependencies *(no need for jQuery or Underscore)*
+- Doesn't have any dependencies *(you don't need jQuery or Underscore)*
 - Doesn't require a DOM to run *(you can run Jasmine from the terminal)*
 
 ### Test Suites
