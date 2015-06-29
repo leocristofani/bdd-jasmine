@@ -145,6 +145,9 @@ reading the comments in the spec files.
 ## Further Resources
 - [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html)
 - [The difference between toEqual and toBe](http://stackoverflow.com/questions/22413009/javascript-using-methods-to-compare) *(Stack Overflow)*
+- [Testing Angular with Karma](https://www.airpair.com/angularjs/posts/testing-angular-with-karma)
+- [httpBackend (create fake backend endpoints)](https://docs.angularjs.org/api/ngMock/service/$httpBackend)
+- [Unit test best practices in AngularJS](http://andyshora.com/unit-testing-best-practices-angularjs.html)
 
 
 
