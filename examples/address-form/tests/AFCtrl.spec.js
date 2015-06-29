@@ -7,14 +7,15 @@
 		var scope;
 
 		/**
-		 * 1. The first thing you need to do to before you test
-		 * an Angular object is to make the Angular Module available.
+		 * 1. The first thing you need before testing an Angular object,
+		 * is to make the Angular object's module available.
+		 * The module() callback is made available by angular-mocks.js
 		 */
 		beforeEach(module('AFModule'));
 
 		/**
 		 * 2. AFService is a dependency of AFCtrl.
-		 * Notice below how I mock AFService to be consumed by AFCtrl
+		 * See below how to mock AFService to be consumed by AFCtrl
 		 */
 		beforeEach(function() {
 
@@ -47,7 +48,7 @@
 			 */
 			$controller('AFCtrl', {
 				$scope: scope,
-				AFService: _AFService_ // Notice the _AFService_ is not the actual factory, but the mocked out version.
+				AFService: _AFService_ // _AFService_ is not the actual factory, but the mocked out version.
 			});
 
 		}));

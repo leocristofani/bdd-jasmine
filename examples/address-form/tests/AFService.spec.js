@@ -7,8 +7,9 @@
 		var AFService, httpBackend, mockAddress;
 
 		/**
-		 * 1. The first thing you need to do to before you test
-		 * an Angular object is to make the Angular Module available.
+		 * 1. The first thing you need before testing an Angular object,
+		 * is to make the Angular object's module available.
+		 * The module() callback is made available by angular-mocks.js
 		 */
 		beforeEach(module('AFModule'));
 
