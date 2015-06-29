@@ -4,10 +4,18 @@
 
 	describe('AFCtrl', function () {
 
-		var AFCtrl, scope, AFService;
+		var scope;
 
+		/**
+		 * 1. The first thing you need to do to before you test
+		 * an Angular object is to make the Angular Module available.
+		 */
 		beforeEach(module('AFModule'));
 
+		/**
+		 * 2. AFService is a dependency of AFCtrl.
+		 * Notice below how I mock AFService to be consumed by AFCtrl
+		 */
 		beforeEach(function() {
 
 			module(function($provide) {
@@ -26,14 +34,20 @@
 
 		});
 
+		/**
+		 * 3. Then you need to prepare the Angular object you want to test,
+		 * together with it's dependencies.
+		 */
 		beforeEach(inject(function ($controller, $rootScope, _AFService_) {
 
 			scope = $rootScope.$new();
-			AFService = _AFService_;
 
+			/**
+			 * 4. This is how you setup the controller, with it's dependencies.
+			 */
 			$controller('AFCtrl', {
 				$scope: scope,
-				AFService: AFService
+				AFService: _AFService_ // Notice the _AFService_ is not the actual factory, but the mocked out version.
 			});
 
 		}));
