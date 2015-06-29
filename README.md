@@ -15,16 +15,12 @@
 7. Setup & Teardown 
 
 #### Testing Angular
-	
-1. Setup (Jasmine, Karma & Grunt)
-2. How to run unit tests from the terminal
-3. Testing controllers
-4. Testing directives with an internal template
-5. Testing directives with an external template
-6. Testing services and factories
+
+1. Testing Angular controllers
+2. Testing Angular services
+4. Testing Angular directives
 
 #### Further Resources
-
 
 
 ## Jasmine Primer
@@ -139,10 +135,16 @@ describe(function('A Calculator', function() {
 - To setup your tests, use the Jasmine global function `beforeEach`
 - To tear down, or cleanup after you've performed your tests, use the Jasmine global function `afterEach`
 
-### Further Resources
+
+## Testing Angular
+
+Refer to `examples/address-form/`. You can understand how to test angular controllers, services and directives by
+reading the comments in the spec files.
+
+
+## Further Resources
 - [Jasmine Official Documentation](http://jasmine.github.io/2.3/introduction.html)
 - [The difference between toEqual and toBe](http://stackoverflow.com/questions/22413009/javascript-using-methods-to-compare) *(Stack Overflow)*
-
 
 
 
