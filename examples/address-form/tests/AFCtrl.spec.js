@@ -21,11 +21,11 @@
 
 			module(function($provide) {
 				$provide.factory('AFService', function($q) {
-					var _getAddressFromZipCode = jasmine.createSpy('getAddressFromZipCode').and.callFake(function(zipCode) {
+					var _getAddressFromZipCode = function(zipCode) {
 						var deferred = $q.defer();
 						deferred.resolve({data: {uf: 'SP', cep: zipCode}});
 						return deferred.promise;
-					});
+					};
 
 					return {
 						getAddressFromZipCode: _getAddressFromZipCode
